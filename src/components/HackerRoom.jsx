@@ -7,8 +7,8 @@ const HackerRoom = (props) => {
     const { actions } = useAnimations(animations, group)
 
     useEffect(() => {
-        if (actions['idle.1']) {
-            actions['car'].play();
+        if (actions['Idle.1']) {
+            actions['Idle.1'].play();
         }
     }, [actions]);
 

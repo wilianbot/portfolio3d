@@ -21,6 +21,26 @@ const Hero = () => {
             value: 2.5,
             min: -10,
             max: 10,
+        },
+        rotationX: {
+            value: 2.5,
+            min: -10,
+            max: 10,
+        },
+        rotationY: {
+            value: 2.5,
+            min: -10,
+            max: 10,
+        },
+        rotationZ: {
+            value: 2.5,
+            min: -10,
+            max: 10,
+        },
+        scale: {
+            value: 2.5,
+            min: -10,
+            max: 10,
         }
     })
 
@@ -37,9 +57,11 @@ const Hero = () => {
                         <PerspectiveCamera makeDefault position={[0, 0, 30]} />
                         <HackerRoom
                             // scale={3}
-                            position={[0, -0.5, 0]}
-                            rotation={[0.2, 100, 0]}
-                            scale={[x.positionX, x.positionY, x.positionZ]}
+                            // position={[0, -0.5, 0]}
+                            // rotation={[0.2, 100, 0]}
+                            position={[1.5, 0.3, 2.5]}
+                            rotation={[-2.9, -2.5, 3.1]}
+                            scale={3.1}
                         />
                         <ambientLight intensity={1}/>
                         <directionalLight position={[10, 10, 10]} intensity={0.5} />
