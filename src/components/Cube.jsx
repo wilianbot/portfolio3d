@@ -1,12 +1,25 @@
-import React, { useRef } from 'react'
+import React, {useEffect, useRef} from 'react'
 import { Float, useGLTF } from '@react-three/drei'
-
+import { gsap } from 'gsap'
 
 const Cube = (props) => {
     const { nodes, materials } = useGLTF('/models/sci-fi_cube_01.glb')
+    const groupRef = useRef();
+
+    useEffect(() => {
+        if (groupRef.current) {
+            gsap.to(groupRef.current.rotation, {
+                y: Math.PI * 2,
+                duration: 4,
+                repeat: -1,
+                ease: 'linear',
+            });
+        }
+    }, []);
+
     return (
         <Float floatIntensity={2}>
-            <group scale={0.08} {...props} dispose={null}>
+            <group ref={groupRef} scale={0.06} {...props} dispose={null}>
                 <mesh
                     castShadow
                     receiveShadow

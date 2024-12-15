@@ -8,6 +8,8 @@ import {calculateSizes} from "../constants/index.js";
 import Target from "../components/Target.jsx";
 import ReactLogo from "../components/ReactLogo.jsx";
 import Cube from "../components/Cube.jsx";
+import Rings from "../components/Rings.jsx"
+import HeroCamera from "../components/HeroCamera.jsx";
 
 const Hero = () => {
     const isSmall = useMediaQuery({ maxWidth: 480 });
@@ -27,17 +29,19 @@ const Hero = () => {
                 <Canvas className={"w-full h-full"}>
                     <Suspense fallback={<CanvasLoader />}>
                         <PerspectiveCamera makeDefault position={[0, 0, 30]} />
-                        <HackerRoom
-                            position={sizes.carPosition}
-                            rotation={[-2.9, -2.5, 3.1]}
-                            scale={sizes.carScale}
+                        <HeroCamera isMobile={isMobile}>
+                            <HackerRoom
+                                position={sizes.carPosition}
+                                rotation={[-2.9, -2.5, 3.1]}
+                                scale={sizes.carScale}
 
-                        />
-
+                            />
+                        </HeroCamera>
                         <group>
                             <Target position={sizes.targetPosition} />
                             <ReactLogo position={sizes.reactLogoPosition}/>
                             <Cube position={sizes.cubePosition}/>
+                            <Rings />
                         </group>
                         <ambientLight intensity={1}/>
                         <directionalLight position={[10, 10, 10]} intensity={0.5} />

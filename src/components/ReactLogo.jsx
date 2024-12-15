@@ -4,7 +4,7 @@ const ReactLogo = (props) => {
     const { nodes, materials } = useGLTF('/models/skyforge_weapon_art.glb')
     return (
         <Float floatIntensity={1}>
-            <group position={[9, 5, 9]} scale={1.3} rotation={[-Math.PI / 2, 0, 9]} {...props} dispose={null}>
+            <group position={[9, 7, 13]} scale={1} rotation={[-Math.PI / 2, 0, 9]} {...props} dispose={null}>
                 <mesh
                     castShadow
                     receiveShadow

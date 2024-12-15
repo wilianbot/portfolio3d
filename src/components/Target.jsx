@@ -6,7 +6,7 @@ const Target = (props) => {
     return (
         <Float floatIntensity={1}>
             <group rotation={[-Math.PI / 3, 0, 1]}  {...props} dispose={null} >
-                <group rotation={[Math.PI / 2, 0, 0]} scale={1.3} position={[10, 20, 0]}>
+                <group rotation={[Math.PI / 2, 0, 0]} scale={1} position={[10, 20, 0]}>
                     <mesh
                         castShadow
                         receiveShadow

@@ -251,9 +251,9 @@ export const calculateSizes = (isSmall, isMobile, isTablet) => {
         carScale: isSmall ? 1.5 : isMobile ? 2.5 : 3.1,
         carPosition: isMobile ? [0.5, 0.15, 0] : [1.5, 0.3, 2.5],
         cubePosition: isSmall ? [4, -5, 0] : isMobile ? [5, -5, 0] : isTablet ? [5, -5, 0] : [9, -5.5, 0],
-        reactLogoPosition: isSmall ? [3, 4, 0] : isMobile ? [5, 4, 0] : isTablet ? [5, 4, 0] : [12, 3, 0],
-        ringPosition: isSmall ? [-5, 7, 0] : isMobile ? [-10, 10, 0] : isTablet ? [-12, 10, 0] : [-24, 10, 0],
-        targetPosition: isSmall ? [-5, -10, -10] : isMobile ? [-9, -10, -10] : isTablet ? [-11, -7, -10] : [-13, -13, -10],
+        reactLogoPosition: isSmall ? [12, 7, -4] : isMobile ? [12, 7, 0] : isTablet ? [12, 7, 2] : [12, 7, 6],
+        ringPosition: isSmall ? [-5, 7, 0] : isMobile ? [-10, 10, 0] : isTablet ? [-12, 10, 0] : [-14, 10, 10],
+        targetPosition: isSmall ? [-5, -10, -15] : isMobile ? [-9, -10, -10] : isTablet ? [-11, -7, -10] : [-13, -13, -10],
     };
 };
 
