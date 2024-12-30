@@ -94,7 +94,7 @@ const About = () => {
                         <div className={"space-y-2"}>
                             <p className={"grid-subtext text-center"}>Contate-me</p>
                             <div className={"copy-container"} onClick={handleCopy}>
-                                <img src={hasCopied ? 'assets/tick.svg' : 'assets/copy.svg'} alt="copy"/>
+                                <img src={hasCopied ? 'assets/tick.svg' : 'assets/copy.svg'} alt="copy" />
                                 <p className={"lg:text-xl sm:text-xs font-medium text-gray_gradient text-white"}>
                                     wiliamrobaldossantos1@gmail.com
                                 </p>
