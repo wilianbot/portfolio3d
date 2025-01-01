@@ -1,7 +1,26 @@
 import {myProjects} from "../constants/index.js";
+import {Suspense, useState} from "react";
+import {Canvas} from "@react-three/fiber";
+import {Center, OrbitControls} from "@react-three/drei";
+import CanvasLoader from "../components/CanvasLoader.jsx";
+import DemoComputer from "../components/DemoComputer.jsx";
+
+const projectCount = myProjects.length;
 
 const Projects = () => {
-    const currentProjects = myProjects[0];
+    const [selectedProjectIndex, setSelectedProjectIndex] = useState(0);
+
+    const currentProjects = myProjects[selectedProjectIndex];
+
+    const handleNavigation = (direction) => {
+        setSelectedProjectIndex((prevIndex) => {
+            if(direction === 'previous') {
+                return prevIndex === 0 ? projectCount -1 : prevIndex - 1;
+            } else {
+                return prevIndex === projectCount -1 ? 0 : prevIndex + 1
+            }
+        })
+    }
 
    return (
        <section className={"c-space my-20"}>
@@ -38,7 +57,32 @@ const Projects = () => {
                             <img src="/assets/arrow-up.png" className={"w-3 h-3"} alt={"arrow"}/>
                         </a>
                     </div>
+
+                    <div className={"flex justify-between items-center mt-7"}>
+                        <button className={"arrow-btn"} onClick={() => handleNavigation('previous')}>
+                            <img src="/assets/left-arrow.png" alt="left-arrow" className={"w-4 h-4"}/>
+                        </button>
+                        <button className={"arrow-btn"} onClick={() => handleNavigation('next')}>
+                            <img src="/assets/right-arrow.png" alt="right-arrow" className={"w-4 h-4"}/>
+                        </button>
+                    </div>
                 </div>
+
+               <div className={"border border-black-300 bg-black-200 rounded-lg h-96 md:h-full"}>
+                    <Canvas>
+                        <ambientLight intensity={4} color={"#f0f0f0"}/>
+                        <directionalLight position={[10, 10, 5]} intensity={2}/>
+                        <pointLight position={[5, 5, 5]} intensity={3} color={"#ffffff"}/>
+                        <Center>
+                            <Suspense fallback={<CanvasLoader />}>
+                                <group scale={2} position={[0.5, -3, 0]} rotation={[0, -0.7, 0]}>
+                                    <DemoComputer />
+                                </group>
+                            </Suspense>
+                        </Center>
+                        <OrbitControls maxPolarAngle={Math.PI / 2} enableZoom={false}/>
+                    </Canvas>
+               </div>
            </div>
        </section>
    )
