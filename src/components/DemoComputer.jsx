@@ -1,5 +1,7 @@
 import React, {useEffect, useRef} from 'react'
 import {useGLTF, useAnimations, useVideoTexture} from '@react-three/drei'
+import {useGSAP} from "@gsap/react";
+import gsap from 'gsap';
 
 const DemoComputer = (props) => {
     const group = useRef()
@@ -12,7 +14,23 @@ const DemoComputer = (props) => {
         }
     }, [actions]);
 
-    const txt = useVideoTexture('/textures/project/project1.mp4')
+    const txt = useVideoTexture(props.texture ? props.texture : '/textures/project/project1.mp4')
+
+    useEffect(() => {
+        if(txt) {
+            txt.flipY = true;
+        }
+    }, [txt]);
+
+    useGSAP(() => {
+        gsap.from(group.current.rotation, {
+            y: Math.PI / 2,
+            duration: 1,
+            ease: 'power3.out'
+        })
+    }, [txt]);
+
+
     return (
         <group ref={group} {...props} dispose={null}>
             <group name="Sketchfab_Scene">
