@@ -6,6 +6,8 @@ import Contact from "./sections/Contact.jsx"
 import Footer from "./sections/Footer.jsx"
 import Experience from "./sections/Experience.jsx"
 
+import { SpeedInsights } from "@vercel/speed-insights/react"
+
 const App = () => {
     return (
         <main className={"max-w-7xl mx-auto"}>
@@ -16,6 +18,7 @@ const App = () => {
             <Experience />
             <Contact />
             <Footer />
+            <SpeedInsights />
         </main>
     )
 }
