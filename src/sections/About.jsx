@@ -16,7 +16,7 @@ const About = () => {
     }
 
     return (
-        <section className={"c-space my-20"} id={"about"}>
+        <section className={"c-space my-20"} id={"sobre"}>
             <div className={"grid xl:grid-cols-3 xl:grid-rows-6 md:grid-cols-2 grid-cols-1 gap-5 h-full"}>
                 <div className={"col-span-1 xl:row-span-3"}>
                     <div className={"grid-container"}>
@@ -67,7 +67,9 @@ const About = () => {
                             <p className={"grid-subtext"}>
                                 Eu sou de Chapecó-SC, com disponibilidade para trabalho remoto.
                             </p>
-                            <Button name={"Contate-me"} isBeam containerClass={"w-full mt-10"}/>
+                            <a href="#contato">
+                                <Button name={"Contate-me"} isBeam containerClass={"w-full mt-10"} />
+                            </a>
                         </div>
                     </div>
                 </div>
