@@ -23,7 +23,7 @@ const Projects = () => {
     }
 
    return (
-       <section className={"c-space my-20"}>
+       <section className={"c-space my-20"} id={"projetos"}>
            <p className={"head-text"}>
                Meu trabalho
            </p>
