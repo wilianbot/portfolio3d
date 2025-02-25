@@ -30,7 +30,7 @@ const Experience = () => {
 
                             {workExperiences.map(({ id, name, pos, icon, duration, title, animation }, index) => (
                                 <div key={id}
-                                     onClick={() => setAnimationName(animation.toLowerCase())}
+                                     // onClick={() => setAnimationName(animation.toLowerCase())}
                                      // onPointerOver={() => setAnimationName(animation.toLowerCase())}
                                      // onPointerOut={() => setAnimationName("idle")}
                                      className={"work-content_container group"}>
